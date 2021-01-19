@@ -1,3 +1,16 @@
+terraform {
+  required_version = ">= 0.13"
+  required_providers {
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+      version = ">= 1.9.1"
+    }
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+      version = ">= 1.13.3"
+    }
+  }
+}
 
 variable "namespace" {
   type = string
