@@ -184,8 +184,8 @@ resource "kubernetes_deployment" "deployment" {
             container_port = 8080
           }
 
-          resources = {
-            limits {
+          resources {
+            limits = {
               cpu    = "200m"
               memory = "200Mi"
             }
