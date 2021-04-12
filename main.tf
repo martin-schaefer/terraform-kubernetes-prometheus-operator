@@ -1,13 +1,13 @@
 terraform {
-  required_version = ">= 0.13"
+  required_version = ">= 0.14.8"
   required_providers {
     kubectl = {
       source  = "gavinbunney/kubectl"
-      version = ">= 1.9.1"
+      version = ">= 1.10.0"
     }
     kubernetes = {
       source = "hashicorp/kubernetes"
-      version = ">= 1.13.3"
+      version = ">= 2.0.3"
     }
   }
 }
@@ -184,13 +184,13 @@ resource "kubernetes_deployment" "deployment" {
             container_port = 8080
           }
 
-          resources {
+          resources = {
             limits {
               cpu    = "200m"
               memory = "200Mi"
             }
 
-            requests {
+            requests = {
               cpu    = "100m"
               memory = "100Mi"
             }
